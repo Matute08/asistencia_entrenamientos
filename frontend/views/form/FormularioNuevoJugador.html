@@ -1,0 +1,33 @@
+//<script type="text/jsx">
+
+function FormularioNuevoJugador() {
+
+    const guardarFormulario = (datos) => {
+        console.log(datos);
+
+    }
+
+    return (
+      <div className="px-20 container mx-auto">
+        <h2 className="text-center font-bold text-xl my-6" >Agregar Jugador </h2>
+        <Form layout="vertical" onFinish={guardarFormulario}>
+
+            <Item name="nombreCompleto" label="Nombre Completo" rules={[
+                { required: true, message: 'Por favor ingrese el nombre completo' }
+                
+                ]}>
+                <Input></Input>
+            </Item>
+
+            <Item className="text-center m-3 p-3">
+                <Button htmlType="submit">Guardar</Button>
+                <Button>Volver</Button>
+            </Item>
+            
+        </Form>
+      </div>
+    )
+  }
+  
+  //</script>
+  
