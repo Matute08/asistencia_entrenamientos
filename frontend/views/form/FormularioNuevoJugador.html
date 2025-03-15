@@ -5,6 +5,10 @@ function FormularioNuevoJugador() {
     const guardarFormulario = (datos) => {
         console.log(datos);
 
+        google.script.run.withSuccessHandler(resp => {
+            console.log(resp.titulo);
+        }).guardarUsuario(datos);
+
     }
 
     return (
@@ -12,7 +16,7 @@ function FormularioNuevoJugador() {
         <h2 className="text-center font-bold text-xl my-6" >Agregar Jugador </h2>
         <Form layout="vertical" onFinish={guardarFormulario}>
 
-            <Item name="nombreCompleto" label="Nombre Completo" rules={[
+            <Item name="Nombre" label="Nombre Completo" rules={[
                 { required: true, message: 'Por favor ingrese el nombre completo' }
                 
                 ]}>
